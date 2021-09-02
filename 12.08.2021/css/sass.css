@@ -1,32 +1,27 @@
-.container {
-  padding-right: 0 !important;
-  top: 0;
-  left: 0;
-}
-
 .container .row .noverlay {
   display: block !important;
 }
 
 .container .row .overlay {
   position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
   display: none;
-  width: 100%;
-  height: 100%;
   margin: auto;
   background-color: rgba(0, 0, 0, 0.5);
-  -webkit-transition: opacity .15s linear;
-  transition: opacity .15s linear;
-  margin-left: 0 !important;
-  padding-left: 0 !important;
+  -webkit-transition: opacity 0.15s linear;
+  transition: opacity 0.15s linear;
   z-index: 2;
+  overflow: auto;
 }
 
 .container .row .page {
   border: 0;
   margin: auto;
   border-radius: 5px;
-  background-color: rgba(255, 255, 255, 0.952);
+  background-color: white;
   color: white;
   padding: 15px;
   width: 800px;
@@ -39,7 +34,53 @@
           justify-content: space-between;
   -webkit-transition: 0.3s ease-in-out;
   transition: 0.3s ease-in-out;
-  overflow: hidden;
+}
+
+.container .row .page .col-lg-5 .row-0 {
+  height: 500px;
+}
+
+.container .row .page .col-lg-5 .row-0 .img {
+  position: relative;
+  height: 483px;
+}
+
+.container .row .page .col-lg-5 .row-0 .img .slideImg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  opacity: 0;
+  -webkit-transition: .5s;
+  transition: .5s;
+}
+
+.container .row .page .col-lg-5 .row-0 .img .slideImg img {
+  width: 100%;
+  height: 100%;
+}
+
+.container .row .page .col-lg-5 .row-0 .img .show {
+  opacity: 1 !important;
+}
+
+.container .row .page .col-lg-5 .row-0 .img .leftIcon {
+  position: absolute;
+  left: 8px;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+  z-index: 2;
+  cursor: pointer;
+}
+
+.container .row .page .col-lg-5 .row-0 .img .rightIcon {
+  position: absolute;
+  right: 8px;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+  z-index: 2;
+  cursor: pointer;
 }
 
 .container .row .page .col-lg-5 .row-1 {
@@ -54,6 +95,7 @@
 }
 
 .container .row .page .col-lg-5 img {
+  opacity: 1;
   margin-bottom: 10px;
   max-width: 100%;
   width: 100%;
@@ -82,10 +124,19 @@
 .container .row .page .col-lg-7 .heading .price h4 {
   text-decoration: line-through;
   color: grey;
+  font-size: 20px;
 }
 
 .container .row .page .col-lg-7 .accordions {
   overflow: hidden;
+}
+
+.container .row .page .col-lg-7 .accordions hr {
+  margin: unset;
+  color: gray;
+  width: 435px;
+  margin-left: 8px;
+  height: 1px;
 }
 
 .container .row .page .col-lg-7 .accordions .accordion {
@@ -102,6 +153,15 @@
   transition: 0.4s;
 }
 
+.container .row .page .col-lg-7 .accordions .accordion i {
+  float: right;
+}
+
+.container .row .page .col-lg-7 .accordions .active i {
+  -webkit-transform: rotate(180deg);
+          transform: rotate(180deg);
+}
+
 .container .row .page .col-lg-7 .accordions .active,
 .container .row .page .col-lg-7 .accordions .accordion:hover {
   color: #3672d3;
@@ -110,11 +170,10 @@
 .container .row .page .col-lg-7 .accordions .panel {
   padding: 0 18px;
   color: grey;
-  background-color: white;
   max-height: 0;
   overflow: hidden;
-  -webkit-transition: max-height 0.2s ease-out;
-  transition: max-height 0.2s ease-out;
+  -webkit-transition: max-height 0.3s ease-out;
+  transition: max-height 0.3s ease-out;
 }
 
 .container .row .page .col-lg-7 .selectmenu {
@@ -127,6 +186,10 @@
   border: none;
   cursor: pointer;
   color: #4285f4;
+  -webkit-box-shadow: none;
+          box-shadow: none;
+  -webkit-transition: 0.3s ease-in-out;
+  transition: 0.3s ease-in-out;
 }
 
 .container .row .page .col-lg-7 .buttons {
